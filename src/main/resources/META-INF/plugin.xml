@@ -5,14 +5,19 @@
     <vendor>dogsunny</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.idea.maven</depends>
+    <depends>org.intellij.plugins.markdown</depends>
+    <depends optional="true" config-file="beetlsql-spring.xml">com.intellij.spring</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.MyProjectService"/>
+        <!--<applicationService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.MyApplicationService"/>-->
+        <!--<projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.JavaService"/>-->
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.dogsunny.beetlsqlidea.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <!--<listener class="com.github.dogsunny.beetlsqlidea.listeners.MyProjectManagerListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
     </applicationListeners>
 </idea-plugin>
