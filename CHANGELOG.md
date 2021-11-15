@@ -2,10 +2,14 @@
 
 # beetlsql-idea Changelog
 
-## [1.0.0] - 2021-10-28
-### Security
-- Released a First version
+## [Unreleased]
 
 ## [Unreleased]
+
+## [1.0.0]
+### Added
+- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+## [1.0.0]
 ### Added
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)

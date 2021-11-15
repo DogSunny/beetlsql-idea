@@ -12,8 +12,12 @@
     <depends optional="true" config-file="beetlsql-spring.xml">com.intellij.spring</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+<!--        <codeInsight.lineMarkerProvider language="JAVA" implementationClass="com.github.dogsunny.beetlsqlidea.spring.line.mark.MapperMarkToSql"/>-->
+<!--        <codeInsight.lineMarkerProvider language="Markdown" implementationClass="com.github.dogsunny.beetlsqlidea.spring.line.mark.SqlMarkToMapper"/>-->
         <!--<applicationService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.MyApplicationService"/>-->
         <!--<projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.JavaService"/>-->
+<!--        <projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.service.SqlService"/>-->
+        <psi.referenceContributor implementation="com.github.dogsunny.beetlsqlidea.contributor.InvokerRefSql"/>
     </extensions>
 
     <applicationListeners>
