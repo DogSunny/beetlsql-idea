@@ -15,12 +15,22 @@
 
 ## ToDo list
 - [x] Solve the problem that `Could not autowire. No beans of'xxx' type found`
-- [ ] sql文件与代码的相互跳转
+- [ ] sql文件与代码的相互跳转 `ctrl + 鼠标左键`
+  - [x] 代码 -> md sql
+  - [ ] 代码 -> sql sql
+  - [ ] md sql-> 代码
+  - [ ] sql sql-> 代码
 - [ ] 代码中 `ctrl + q` 可看到sql
-- [ ] 在使用`SQLManager.select(sqlId)` sqlId获得提示
+- [x] 提示相关 `ctrl + 空格`
+  - [x] 在使用`SQLManager.select(sqlId)` sqlId获得提示
+  - [x] 在使用`SqlId.of("aaa.bbb");` sqlId获得提示
+  - [x] 在使用`SqlId.of("aaa", "bbb");` sqlId获得提示
+- [ ] 色彩线上
 - [ ] 在找不到对应的sqlId时提示，并提供快速修复功能
 - [ ] 根据配置的 Profile 找到 beetlsql 的配置
-- [ ] 方法名称重构的支持
+- [ ] sqlId重构的支持
+- [ ] 支持多数据源
+
 <!-- Plugin description -->
 A simple plugin for [BeetlSQL](https://gitee.com/xiandafu/beetlsql). Solve the problem that `Could not autowire. No beans of'xxx' type found` will be reported when intellij uses this ORM framework.
 <!-- Plugin description end -->

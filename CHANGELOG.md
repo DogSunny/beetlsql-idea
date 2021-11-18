@@ -12,4 +12,5 @@
 
 ## [1.0.0]
 ### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+- 增加代码提示
+- 增加代码跳转到md sql

@@ -18,7 +18,7 @@ private const val MARKDOWN_SQL_HEADER_TITLE = "==="
 private const val RESOURCE_DIR = "resources"
 
 fun PsiElement.module(): Module? {
-    return ModuleUtil.findModuleForFile(containingFile.virtualFile, project)
+    return ModuleUtil.findModuleForFile(containingFile.originalFile.virtualFile?:return null, project)
 }
 
 fun Module.findFilesByName(fileName: String, sqlFileType: SqlFileType): Array<out PsiFileSystemItem> {
@@ -35,7 +35,7 @@ fun Module.findSqlFilesByExt(type: SqlFileType): List<FindSqlFileResult> {
     return findVFilesByExt(type)
         .filter { it.path.contains(RESOURCE_DIR) }
         .mapNotNull { PsiManager.getInstance(project).findFile(it) }
-        .map { FindSqlFileResult(SqlFileId(it.name), it, type) }
+        .map { FindSqlFileResult(SqlFileId(it.name.removeSuffix("." + type.extension)), it, type) }
 }
 fun Module.findAllSqlFiles(): List<FindSqlFileResult> {
     // TODO 支持.sql
@@ -64,10 +64,10 @@ fun Module.findSqlScript(sqlScriptId: SqlScriptId): FindSqlScriptResult? {
 
 fun findSqlScripts(findSqlFileResult: FindSqlFileResult): List<FindSqlScriptResult> {
     val (sqlId, psiFile, sqlFileType) = findSqlFileResult
-    val rootElement = PsiTreeUtil.firstChild(psiFile)
+    val rootElement = psiFile.firstChild
     return (PsiTreeUtil.getChildrenOfType(rootElement, MarkdownHeaderImpl::class.java)?: emptyArray<PsiElement>())
-        .mapNotNull { it.firstChild.apply { println("- ${it}") } }
-        .mapNotNull { it.firstChild.apply { println("-- ${it}") } } // leafElements
+        .mapNotNull { it.firstChild }
+        .mapNotNull { it.firstChild } // leafElements
         .map { FindSqlScriptResult(SqlScriptId(sqlId.fileName, it.text), it, sqlFileType) }
 }
 
