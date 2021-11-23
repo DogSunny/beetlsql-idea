@@ -44,6 +44,7 @@ class InvokerRefSql : PsiReferenceContributor() {
 
     private fun PsiLiteralExpression.getFileScriptName(): Triple<String, String?, TextRange?>? {
         value?: return null
+        if (value !is String) return null
         val stringValue = value as String
         val psiExpressionList = parent
         val methodName = PsiTreeUtil.getPrevSiblingOfType(psiExpressionList, PsiReferenceExpression::class.java)?.text?:return null
