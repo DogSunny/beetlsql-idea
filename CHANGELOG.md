@@ -4,7 +4,8 @@
 
 ## [Unreleased]
 
-## [Unreleased]
+## [1.0.2]
+test
 
 ## [1.0.0]
 ### Added
