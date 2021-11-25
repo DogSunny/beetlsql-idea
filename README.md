@@ -22,20 +22,21 @@
 
 <!-- Plugin description -->
 A simple plugin for [BeetlSQL](https://gitee.com/xiandafu/beetlsql). Solve the problem that `Could not autowire. No beans of'xxx' type found` will be reported when intellij uses this ORM framework.
-## ToDo list
-- [x] Solve the problem that `Could not autowire. No beans of'xxx' type found`
-- [ ] sql文件与代码的相互跳转 `ctrl + 鼠标左键`
-  - [x] 代码 -> md sql
-  - [ ] 代码 -> sql sql
-  - [ ] md sql-> 代码
-  - [ ] sql sql-> 代码
-- [ ] 代码中 `ctrl + q` 可看到sql
-- [x] 提示相关 `ctrl + 空格`
-  - [x] 在使用`SQLManager.select(sqlId)` sqlId获得提示
-  - [x] 在使用`SqlId.of("aaa.bbb");` sqlId获得提示
-  - [x] 在使用`SqlId.of("aaa", "bbb");` sqlId获得提示
-- [ ] 色彩线上
-- [ ] 在找不到对应的sqlId时提示，并提供快速修复功能
+## Features
+- [x] 解决Spring注入错误 `Could not autowire. No beans of'xxx' type found`
+- [ ] 代码跳转 `ctrl + 鼠标左键`
+  - [x] code -> markdown
+  - [ ] code -> sql
+  - [ ] markdown -> code
+  - [ ] sql-> code
+- [ ] 代码中 `ctrl + q` 可看到SQL
+- [x] 提示相关 `ctrl + 空格`，需要优化，有概率误识别
+  - [x] `SQLManager.select("aaa.bbb")` 
+  - [x] `SqlId.of("aaa.bbb");`
+  - [x] `SqlId.of("aaa", "bbb");`
+  - [x] `sqlManager.update("aaa.bbb")`
+  - [x] `sqlManager.insert("aaa.bbb")`
+- [ ] 错误提示, 并提供快速修复
 - [ ] 根据配置的 Profile 找到 beetlsql 的配置
 - [ ] sqlId重构的支持
 - [ ] 支持多数据源

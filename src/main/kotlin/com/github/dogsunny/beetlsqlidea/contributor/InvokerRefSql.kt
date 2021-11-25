@@ -66,13 +66,15 @@ class InvokerRefSql : PsiReferenceContributor() {
             val second = literals.getOrNull(1)
             if (second != null && second == this) Triple(first.value as String, stringValue, TextRange(1, stringValue.length + 1))
             else parseSqlId()
-
-        }
-        else if (methodName.endsWith(".select")) {
+        } else if (
+            methodName.endsWith(".select") ||
+            methodName.endsWith(".update") ||
+            methodName.endsWith(".insert") ||
+            methodName.endsWith(".getScript")
+        ) {
             // 判断是否为第一个参数
             val prevToken = PsiTreeUtil.getPrevSiblingOfType(this, PsiJavaToken::class.java)
             if (prevToken.elementType == JavaTokenType.LPARENTH) parseSqlId() else return null
-
         }
         else null
     }

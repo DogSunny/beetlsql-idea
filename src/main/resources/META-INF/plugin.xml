@@ -18,6 +18,7 @@
         <!--<projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.services.JavaService"/>-->
 <!--        <projectService serviceImplementation="com.github.dogsunny.beetlsqlidea.service.SqlService"/>-->
         <psi.referenceContributor implementation="com.github.dogsunny.beetlsqlidea.contributor.InvokerRefSql"/>
+        <
     </extensions>
 
     <applicationListeners>

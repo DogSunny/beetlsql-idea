@@ -14,3 +14,7 @@
 ## [1.0.2]
 ### Fixed
 - class java.lang.Integer cannot be cast to class java.lang.String (java.lang.Integer and java.lang.String are in module java.base of loader 'bootstrap')
+
+## [1.0.2]
+### Added
+- 增加对`sqlManager.update("aaa.bbb")` `sqlManager.insert("aaa.bbb")`方法的支持
